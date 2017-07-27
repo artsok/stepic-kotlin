@@ -1,2 +1,2 @@
 # stepic-kotlin
-Resolvet tasks for cource 'Kotlin' on Stepic.org
+Resolved tasks for cource 'Kotlin' on Stepic.org
