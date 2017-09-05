@@ -26,4 +26,5 @@ Read {
 
 // Return customers who have more undelivered orders than delivered
 fun Shop.getCustomersWithMoreUndeliveredOrdersThanDelivered(): Set<Customer> =
-        this.customers.partition { it.orders.filter { it.isDelivered == false }.count() > it.orders.filter { it.isDelivered == true }.count()}.first.toSet()
+        this.customers.partition {
+            it.orders.filter { it.isDelivered == false }.count() > it.orders.filter { it.isDelivered == true }.count()}.first.toSet()

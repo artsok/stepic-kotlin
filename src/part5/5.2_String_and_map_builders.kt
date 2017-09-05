@@ -30,11 +30,10 @@ building it and returning it as a result. The usage of this function is shown be
 import java.util.HashMap
 
 
-fun  buildMap(function: HashMap<Int, String>.() -> Unit): Map<Int, String> {
+fun  buildMap(hashFunction: HashMap<Int, String>.() -> Unit): Map<Int, String> {
     var hashMap = HashMap<Int,String>()
-    
-
-    return HashMap<Int,String>()
+    hashMap.hashFunction()
+    return hashMap
 }
 
 
@@ -45,5 +44,24 @@ fun usage(): Map<Int, String> {
             put(i, "$i")
         }
     }
+}
+
+fun buildString(buildThis: StringBuilder.() -> Unit): String {
+    val stringBuilder = StringBuilder()
+    stringBuilder.buildThis() //buildThis() - это название метода для StringBuilder. StringBuilder расширяем. Мы его вызываем на переданном параметре
+    return stringBuilder.toString()
+}
+
+val s = buildString {
+    this.append("Numbers: ")
+    for (i in 1..3) {
+        // 'this' can be omitted
+        append(i)
+    }
+}
+
+fun main(args: Array<String>) {
+    println(buildString({this.append("333"); for (i in 1..3) append(i)} ))
+    println(buildMap {put(0, "0"); for (i in 1..10) put(i, "$i")})
 }
 
