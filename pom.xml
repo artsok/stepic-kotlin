@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>kotlin-basic</name>
-    <description>QA Test for Revolut</description>
+    <description>Kotlin base course from Stepic</description>
     <developers>
         <developer>
             <name>Artem Sokovets</name>
